@@ -326,11 +326,11 @@ Log.i("gson_bean_5","${bean.id}:${bean.name}")
 
 # 四、总结
 
-`Gson`在解析`Kotlin data class`时，如果data没有提供默认的无参数构造函数，`Gson`将通过`Unsafe`方案创建对象，此时将跳过kotlin的`Null-Safely`检查，并且此时对象中数据的值，皆为虚拟机赋予的初始值，而不是我们定义的默认值，所以首先需要给对象提供无参数构造函数。但是即使提供了无参数，如果返回的Json中，明确指定某个参数为null，我们依然无能为力，此时可以接入我上面提供`NonNullTypeAdapterFactory`，它将会检查这个参数是否可以为null，如果不可为null，则使用默认值替换掉null。
+`Gson`在解析`Kotlin data class`时，如果data没有提供默认的无参数构造函数，`Gson`将通过`Unsafe`方案创建对象，此时将跳过kotlin的`Null-Safely`检查，并且此时对象中数据的值，皆为虚拟机赋予的初始值，而不是我们定义的默认值，所以首先需要给对象提供无参数构造函数。但是即使提供了无参数，如果返回的Json中，明确指定某个参数为null，我们依然无能为力，此时可以接入我上面提供`KotlinJsonTypeAdapterFactory`，它将会检查这个参数是否可以为null，如果不可为null，则使用默认值替换掉null。
 
 此方案并不是完美的，它要求你提供一个有无参数构造函数的`Kotlin data class`，才可以保证不会触发`NullPointerException`。
 
-**[NonNullTypeAdapterFactory仓库地址](https://github.com/Idtk)**
+**[KotlinJsonTypeAdapterFactory仓库地址](https://github.com/Idtk/JsonParse/blob/main/app/src/main/java/com/idtk/jsonparsedemo/KotlinJsonTypeAdapterFactory.kt)**
 
 如果在阅读过程中，有任何疑问与问题，欢迎与我联系。
 

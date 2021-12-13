@@ -23,7 +23,7 @@ import kotlin.reflect.jvm.isAccessible
  *      通过无参数构造函数，创建对象，并用此对象的值，默认不可为null，
  *      但是Json中又指定为null的参数进行赋值
  */
-class NonNullTypeAdapterFactory : TypeAdapterFactory {
+class KotlinJsonTypeAdapterFactory : TypeAdapterFactory {
 
     private val KOTLIN_METADATA = Metadata::class.java
 

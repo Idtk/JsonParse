@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
         val json0 = "{\n  \"id\": 100\n}"
         val json1 = "{\n  \"id\": 100,\n  \"name\": null\n}"
         val beanGson = GsonBuilder()
-            .registerTypeAdapterFactory(NonNullTypeAdapterFactory())
+            .registerTypeAdapterFactory(KotlinJsonTypeAdapterFactory())
             .create()
             .fromJson(json0, Bean::class.java)
-        Log.i("gson_bean1", "id:${beanGson.id};name:${beanGson.name}")
+        Log.i("gson_bean_1", "id:${beanGson.id};name:${beanGson.name}")
     }
 }
