@@ -334,7 +334,7 @@ Log.i("gson_bean_5","${bean.id}:${bean.name}")
 
 如果在阅读过程中，有任何疑问与问题，欢迎与我联系。
 
-**博客: [www.idtkm.com](http://www.idtkm.com/)**
+**博客: [www.zhichaoma.com](https://www.zhichaoma.com/)**
 
 **GitHub: [https://github.com/Idtk](https://github.com/Idtk)**
 
